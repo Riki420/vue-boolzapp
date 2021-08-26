@@ -1,0 +1,12 @@
+body{
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgb(0, 150, 136), rgb(216, 219, 214));
+}
+
+.my-s-height{
+    height: 600px;
+}
+
+.my-s-width{
+    width: 80%;
+}
