@@ -44,10 +44,21 @@ body{
     cursor: pointer;
 
 }
+.flex-row{
+    flex-direction: row;
+}
 
 .bg-pic{
     background-image: url(../img/mine.jpg);
     background-position: center;
     background-repeat: repeat;
     background-size: 50%;
+}
+
+.mr-2{
+margin-right: 10px;
+}
+
+.pointer{
+    cursor: pointer;
 }
