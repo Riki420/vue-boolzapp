@@ -2,11 +2,23 @@ body{
     height: 100vh;
     background-image: linear-gradient(to bottom, rgb(0, 150, 136), rgb(216, 219, 214));
 }
-
-.my-s-height{
+.my-s-height-1{
+    height: 70px;
+}
+.my-s-height-2{
+    height: 80px;
+}
+.my-s-height-6{
     height: 600px;
 }
 
 .my-s-width{
     width: 80%;
+}
+
+.bg-ea{
+    background-color: #eaeaea;
+}
+.bg-eda{
+    background-color: #8edafc;
 }
