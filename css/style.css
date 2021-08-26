@@ -10,6 +10,9 @@ body{
 .my-s-height-2{
     height: 80px;
 }
+.my-s-height-3{
+    height: 350px;
+}
 .my-s-height-4{
     height: 450px;
 }
@@ -29,6 +32,29 @@ body{
 .bg-eda{
     background-color: #8edafc;
 }
+
+.bg-dfba{
+    background-color: #d5f9ba;
+}
+
+/*TEXT STYLE*/
+.text-underline{
+    text-decoration: underline;
+}
+
+.text-small{
+    font-size: small;
+}
+
+.text-extra-small{
+    font-size: x-small;
+}
+
+.txt-right-block{
+    display: block;
+    text-align: right;
+}
+
 
 /*More Utilies*/
 .my-border{
@@ -62,3 +88,10 @@ margin-right: 10px;
 .pointer{
     cursor: pointer;
 }
+
+
+.chat-balloon{
+    border-radius: 25px;
+    width: 40%;
+}
+

@@ -27,7 +27,7 @@
                                     <img src="./img/avatar_io.jpg" alt="avatar_io" class="img-fluid circle">
                                 </div>
                                 <div class="col-4 d-flex align-self-center">
-                                    <span class="fs-6">NOME UTENTE</span>
+                                    <span class="fs-6">Nome Utente</span>
                                 </div>
                                 <div class="col-6 d-flex justify-content-end align-self-center">
                                     <h4 class="text-right">
@@ -40,7 +40,7 @@
 
                             <!--NOTIFICA WEB-->
                             <div class="col-12 bg-eda my-s-height-2 py-2 d-flex align-self-start">
-                                <div class="col-2 d-flex align-self-center py-2">
+                                <div class="col-2 d-flex align-self-center py-2 mr-2">
                                     <i class="far fa-bell-slash fa-3x circle bg-ea"></i>
                                 </div>
                                 <div class="col-9 align-self-center">
@@ -48,7 +48,7 @@
                                         <span class="text-left">Ricevi notifiche di nuovi messaggi</span>
                                     </div>
                                     <div>
-                                        <span class="text-underline">Attiva notifiche desktop</span>
+                                        <span class="text-underline text-small pointer">Attiva notifiche desktop</span>
                                     </div>
                                 </div>
                             </div>
@@ -58,12 +58,14 @@
                             <input type="search" name="searchUser" id="searchUser" class="w-100 py-2" placeholder="Cerca o avvia una chat">
 
                             <!--UTENTI-->
-                            <div class="col-12 w-100 d-flex align-self-center py-2 my-s-height-1 my-border usr-hvr">
-                                <div class="col-2 mr-2">
-                                    <img src="./img/avatar_1.jpg" alt="avatar_1" class="img-fluid circle ">
-                                </div>
-                                <div class="col-4 d-flex align-self-center">
-                                    <span class="fs-6">Michele</span>
+                            <div class="col-12 my-s-height-3 overflow-scroll">
+                                <div class="w-100 d-flex align-self-center py-2 my-border usr-hvr">
+                                    <div class="col-2 mr-2">
+                                        <img src="./img/avatar_1.jpg" alt="avatar_1" class="img-fluid circle ">
+                                    </div>
+                                    <div class="col-4 d-flex align-self-center">
+                                        <span class="fs-6">Michele</span>
+                                    </div>
                                 </div>
                             </div>
                            
@@ -94,8 +96,23 @@
                             </div>
 
                             <!--CHAT-->
-                            <div class="col-12 bg-pic my-s-height-4">
-
+                            <div class="col-12 bg-pic my-s-height-4 overflow-scroll">
+                                <div class="container py-2">
+                                    <div class="row justify-content-between">
+                                        <div class="col-6 chat-balloon bg-ea py-2 px-3">
+                                            <span class="">Ciao</span>
+                                            <div>
+                                                <span class="txt-right-block text-extra-small">11 agosto 2012 24.00</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 chat-balloon bg-dfba p-2 px-3">
+                                            <span class="">Ciao</span>
+                                            <div>
+                                                <span class="txt-right-block text-extra-small">11 agosto 2012 24.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <!--INPUT MESSAGGIO-->
@@ -104,7 +121,7 @@
                                     <h3 class="text-center"><i class="far fa-smile"></i></h3>
                                 </div>
                                 <div class="col-10 flex-grow">
-                                    <input type="Text" name="textMsg" id="textMsg" class="w-100 h-100" placeholder="Scrivi un messaggio..."></input>
+                                    <input type="Text" name="textMsg" id="textMsg" class="w-100 h-100 p-2" placeholder="Scrivi un messaggio..."></input>
                                 </div>
                                 <div class="col-1 align-self-center">
                                     <h3 class="text-center"><i class="fas fa-microphone"></i></h3>
