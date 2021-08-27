@@ -57,21 +57,12 @@ body{
 
 
 /*More Utilies*/
-.my-border{
-    border-bottom: 1px solid black;
-}
 
-.circle{
-    border-radius: 50%;
-}
 
 .usr-hvr:hover{
     background-color: #d6d5d5;
     cursor: pointer;
 
-}
-.flex-row{
-    flex-direction: row;
 }
 
 .bg-pic{
@@ -81,17 +72,45 @@ body{
     background-size: 50%;
 }
 
-.mr-2{
-margin-right: 10px;
-}
-
 .pointer{
     cursor: pointer;
 }
 
-
-.chat-balloon{
-    border-radius: 25px;
-    width: 40%;
+.bell-circle{
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eaeaea;
 }
-
+/* MESSAGES */
+.message-container {
+    display: flex;
+  }
+  .message-container.sent {
+    justify-content: flex-end;
+  }
+  
+  .message-container.received {
+    justify-content: flex-start;
+  }
+  
+  .message-container.sent .message {
+    background-color: #d5f9ba;
+  }
+  
+  .message-container.received .message {
+    background-color: #fff;
+  }
+  
+  .message-container .message p {
+    margin-bottom: 0;
+  }
+  .message-container .message time {
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: #aaa;
+  }
