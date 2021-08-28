@@ -94,9 +94,22 @@ const root = new Vue ({
               ],
             },
           ],
-          currentIndex: 0
+          currentIndex: 0,
+          currentChat: '',
+          boxImage: ''
         
        
     },
-    method: {}
+    methods: {
+      showChat(index){
+        this.currentChat = this.contacts[index];
+        
+      },
+      getContactImage(index) {
+        const contact = this.contacts[index];
+        const imageContact = `./img/avatar${contact.avatar}.jpg`;
+        return imageContact
+      },
+      
+    }
 })

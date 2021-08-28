@@ -69,9 +69,12 @@
                             <!--UTENTI-->
                             <div class="col-12 my-s-height-3 overflow-scroll p-0">
                                     <ul class="m-0 p-0">
-                                        <li class="media usr-hvr border-bottom" v-for="(contact, index) in contacts">
+                                        <li class="media usr-hvr border-bottom" 
+                                        v-for="(contact, index) in contacts" 
+                                        @click="showChat(index)">
                                           <figure>
-                                            <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name" />
+                                            <img :src="getContactImage(index)"
+                                             :alt="contact.name" />
                                           </figure>
                                           <div class="h6 media-text">
                                             <div>{{ contact.name }}</div>
@@ -95,7 +98,7 @@
                                 </div>
                                 <div class="col-3 d-flex align-self-center flex-column py-2">
                                     <span class="fs-6">Michele</span>
-                                    <span class="fs-6">Ultimo accesso alle:</span>
+                                    <span class="fs-6">Ultimo accesso oggi alle:</span>
                                 </div>
                                 <div class="col-8 d-flex justify-content-end text-muted align-self-center">
                                     <h4 class="text-right">
@@ -111,7 +114,7 @@
                                 <ul>
                                     <li 
                                     class="message-container p-3" 
-                                    v-for="message in contacts[currentIndex].messages"
+                                    v-for="message in currentChat.messages"
                                     :class="{ sent : message.status === 'sent', received : message.status === 'received' }">
                                       <div class="message p-2 rounded-3">
                                         <p>{{ message.message }}</p>
