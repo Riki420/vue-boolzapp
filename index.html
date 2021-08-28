@@ -25,19 +25,21 @@
                     <div class="w-100">
                         <div class="row">
                             <!--UTENTE-->
-                            <div class="col-12 bg-ea my-s-height-1 py-2 d-flex align-self-center">
-                                <div class="col-2">
-                                    <img src="./img/avatar_io.jpg" alt="avatar_io" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="col-4 d-flex align-self-center">
-                                    <span class="fs-6">Nome</span>
-                                </div>
-                                <div class="col-6 d-flex justify-content-end align-self-center">
-                                    <h4 class="text-right">
-                                        <i class="fas fa-circle-notch me-2 pointer"></i>
-                                        <i class="fas fa-comment-alt me-2 pointer"></i>
-                                        <i class="fas fa-ellipsis-v pointer"></i>
-                                    </h4>
+                            <div class="col-12 bg-ea my-s-height-1 py-2 d-flex align-self-center justify-content-between">
+                                <ul class="m-0 p-0">
+                                    <li class="media">
+                                      <figure>
+                                        <img src="img/avatar_io.jpg" alt="Io" />
+                                      </figure>
+                                      <div class="h6 media-text">
+                                        <div>Nome Utente</div>
+                                      </div>
+                                    </li>
+                                </ul>
+                                <div class="w-25 text-muted d-flex justify-content-around align-items-center">
+                                    <i class="fas fa-circle-notch pointer"></i>
+                                    <i class="fas fa-comment-alt pointer"></i>
+                                    <i class="fas fa-ellipsis-v pointer"></i>
                                 </div>
                             </div>
 
@@ -59,13 +61,15 @@
                             </div>
 
                             <!--INPUT DI RICERCA-->
+                            <div class="p-2 position-relative">
+                                <input type="search" name="searchUser" id="searchUser" class="w-100 py-2 px-4 rounded-pill" placeholder="Cerca o avvia una chat">
+                            </div>
                             
-                            <input type="search" name="searchUser" id="searchUser" class="w-100 py-2" placeholder="Cerca o avvia una chat">
 
                             <!--UTENTI-->
                             <div class="col-12 my-s-height-3 overflow-scroll p-0">
                                     <ul class="m-0 p-0">
-                                        <li class="media usr-hvr border-bottom" v-for="contact in contacts">
+                                        <li class="media usr-hvr border-bottom" v-for="(contact, index) in contacts">
                                           <figure>
                                             <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name" />
                                           </figure>
@@ -93,7 +97,7 @@
                                     <span class="fs-6">Michele</span>
                                     <span class="fs-6">Ultimo accesso alle:</span>
                                 </div>
-                                <div class="col-8 d-flex justify-content-end align-self-center">
+                                <div class="col-8 d-flex justify-content-end text-muted align-self-center">
                                     <h4 class="text-right">
                                         <i class="fas fa-search mr-2 pointer"></i>
                                         <i class="fas fa-paperclip mr-2 pointer"></i>
@@ -105,16 +109,10 @@
                             <!--CHAT-->
                             <div class="col-12 bg-pic my-s-height-4 overflow-scroll">
                                 <ul>
-                                    <li class="message-container p-3 sent">
+                                    <li class="message-container p-3 sent" v-for="message in contacts[currentIndex].messages">
                                       <div class="message p-2 rounded-3">
-                                        <p>Hai portato a spasso il cane?</p>
-                                        <time datetime="2021-08-03T09:53">10/01/2020 - 09:53</time>
-                                      </div>
-                                    </li>
-                                    <li class="message-container p-3 received">
-                                      <div class="message p-2 rounded-3">
-                                        <p>Sì!</p>
-                                        <time datetime="2021-08-03T10:07">10/01/2020 - 10:07</time>
+                                        <p>{{ message.message }}</p>
+                                        <time datetime="2021-08-03T09:53">{{ message.date }}</time>
                                       </div>
                                     </li>
                                   </ul>

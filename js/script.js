@@ -94,6 +94,8 @@ const root = new Vue ({
               ],
             },
           ],
+          currentIndex: 0
+        
        
     },
     method: {}
