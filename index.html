@@ -109,7 +109,10 @@
                             <!--CHAT-->
                             <div class="col-12 bg-pic my-s-height-4 overflow-scroll">
                                 <ul>
-                                    <li class="message-container p-3 sent" v-for="message in contacts[currentIndex].messages">
+                                    <li 
+                                    class="message-container p-3" 
+                                    v-for="message in contacts[currentIndex].messages"
+                                    :class="{ sent : message.status === 'sent', received : message.status === 'received' }">
                                       <div class="message p-2 rounded-3">
                                         <p>{{ message.message }}</p>
                                         <time datetime="2021-08-03T09:53">{{ message.date }}</time>
