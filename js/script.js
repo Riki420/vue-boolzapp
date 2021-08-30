@@ -110,6 +110,28 @@ const root = new Vue ({
         const imageContact = `./img/avatar${contact.avatar}.jpg`;
         return imageContact
       },
+      sendMessage(){
+        if(!this.userMessage) return;
+        const userMessage = {
+          status: 'sent',
+          message: this.userMessage,
+          
+
+        }
+        this.contacts[this.currentIndex].messages.push(userMessage);
+        this.userMessage = '';
+
+        setTimeout(() => {
+          const answerMessage = {
+            status: 'received',
+            message: 'esse ma va la'
+          }
+          this.contacts[this.currentIndex].messages.push(answerMessage);
+
+        }, 1000);
+      }
+
+      
       
     }
 })

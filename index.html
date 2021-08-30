@@ -129,7 +129,7 @@
                                     <h3 class="text-center"><i class="far fa-smile"></i></h3>
                                 </div>
                                 <div class="col-10 flex-grow">
-                                    <input type="Text" name="textMsg" id="textMsg" class="w-100 h-100 p-2" placeholder="Scrivi un messaggio..." v-model="userMessage"></input>
+                                    <input type="Text" name="textMsg" id="textMsg" class="w-100 h-100 p-2" placeholder="Scrivi un messaggio..." v-model="userMessage" v-on:keyup.enter="sendMessage().trim()"></input>
                                 </div>
                                 <div class="col-1 align-self-center">
                                     <h3 class="text-center"><i class="fas fa-microphone"></i></h3>
