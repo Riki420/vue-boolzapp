@@ -96,25 +96,31 @@ const root = new Vue ({
           ],
           currentIndex: 0,
           currentChat: '',
-          userMessage: ''
+          userMessage: '',
+          filteredContact: '',
+          searchTerm: ''
         
        
     },
     methods: {
+      
       showChat(index){
         this.currentIndex = index;
         
       },
+
       getContactImage(index) {
         const contact = this.contacts[index];
         const imageContact = `./img/avatar${contact.avatar}.jpg`;
         return imageContact
       },
+
       sendMessage(){
-        if(!this.userMessage) return;
+        if(!this.userMessage.trim()) return;
         const userMessage = {
           status: 'sent',
           message: this.userMessage,
+          date: dayjs().format('DD/MM/YYYY HH:mm:ss')
           
 
         }
@@ -124,14 +130,19 @@ const root = new Vue ({
         setTimeout(() => {
           const answerMessage = {
             status: 'received',
-            message: 'esse ma va la'
+            message: 'ok',
+            date: dayjs().format('DD/MM/YYYY HH:mm:ss')
+
           }
           this.contacts[this.currentIndex].messages.push(answerMessage);
 
         }, 1000);
-      }
+      },
 
-      
-      
-    }
-})
+      searchUser(){
+        if(!this.searchTerm.trim()) return true;
+        const filteredUser = this.searchTerm.trim().toLowerCase();
+        return this.contacts.includes(filteredUser);
+    }        
+  }
+});

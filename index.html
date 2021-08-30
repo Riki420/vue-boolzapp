@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/style.css">
 
      <!--ONLY SCRIPT-->
+     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
     <title>Document</title>
@@ -61,7 +62,7 @@
 
                             <!--INPUT DI RICERCA-->
                             <div class="p-2 position-relative">
-                                <input type="search" name="searchUser" id="searchUser" class="w-100 py-2 px-4 rounded-pill" placeholder="Cerca o avvia una chat">
+                                <input type="search" name="searchUser" id="searchUser" class="w-100 py-2 px-4 rounded-pill" placeholder="Cerca o avvia una chat" v-model="searchTerm">
                             </div>
                             
 
@@ -70,7 +71,9 @@
                                     <ul class="m-0 p-0">
                                         <li class="media usr-hvr border-bottom" 
                                         v-for="(contact, index) in contacts" 
-                                        @click="showChat(index)">
+                                        @click="showChat(index)"
+                                        v-if="searchUser()"
+                                        >
                                           <figure>
                                             <img :src="getContactImage(index)"
                                              :alt="contact.name" />
@@ -129,7 +132,7 @@
                                     <h3 class="text-center"><i class="far fa-smile"></i></h3>
                                 </div>
                                 <div class="col-10 flex-grow">
-                                    <input type="Text" name="textMsg" id="textMsg" class="w-100 h-100 p-2" placeholder="Scrivi un messaggio..." v-model="userMessage" v-on:keyup.enter="sendMessage().trim()"></input>
+                                    <input type="Text" name="textMsg" id="textMsg" class="w-100 h-100 p-2" placeholder="Scrivi un messaggio..." v-model="userMessage" v-on:keyup.enter="sendMessage()"></input>
                                 </div>
                                 <div class="col-1 align-self-center">
                                     <h3 class="text-center"><i class="fas fa-microphone"></i></h3>
