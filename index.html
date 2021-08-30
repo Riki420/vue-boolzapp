@@ -12,7 +12,6 @@
 
      <!--ONLY SCRIPT-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="./js/data.js"></script>
 
     <title>Document</title>
 </head>
@@ -94,14 +93,14 @@
                             <!--TITOLO CHAT UTENTE-->
                             <div class="col-12 bg-ea my-s-height-1 py-2 d-flex align-self-center">
                                 <div class="col-1">
-                                    <img src="./img/avatar_1.jpg" alt="avatar_1" class="img-fluid rounded-circle">
+                                    <img :src="`img/avatar${contacts[currentIndex].avatar}.jpg`" alt="avatar_1" class="img-fluid rounded-circle">
                                 </div>
                                 <div class="col-3 d-flex align-self-center flex-column py-2">
-                                    <span class="fs-6">Michele</span>
-                                    <span class="fs-6">Ultimo accesso oggi alle:</span>
+                                    <span class="media-text">{{ contacts[currentIndex].name }}</span>
+                                    <span class="media-text">Ultimo accesso oggi alle:</span>
                                 </div>
                                 <div class="col-8 d-flex justify-content-end text-muted align-self-center">
-                                    <h4 class="text-right">
+                                    <h4 class="text-right text-muted">
                                         <i class="fas fa-search mr-2 pointer"></i>
                                         <i class="fas fa-paperclip mr-2 pointer"></i>
                                         <i class="fas fa-ellipsis-v pointer"></i>
@@ -114,8 +113,8 @@
                                 <ul>
                                     <li 
                                     class="message-container p-3" 
-                                    v-for="message in currentChat.messages"
-                                    :class="{ sent : message.status === 'sent', received : message.status === 'received' }">
+                                    v-for="message in contacts[currentIndex].messages"
+                                    :class="message.status">
                                       <div class="message p-2 rounded-3">
                                         <p>{{ message.message }}</p>
                                         <time datetime="2021-08-03T09:53">{{ message.date }}</time>
@@ -130,7 +129,7 @@
                                     <h3 class="text-center"><i class="far fa-smile"></i></h3>
                                 </div>
                                 <div class="col-10 flex-grow">
-                                    <input type="Text" name="textMsg" id="textMsg" class="w-100 h-100 p-2" placeholder="Scrivi un messaggio..."></input>
+                                    <input type="Text" name="textMsg" id="textMsg" class="w-100 h-100 p-2" placeholder="Scrivi un messaggio..." v-model="userMessage"></input>
                                 </div>
                                 <div class="col-1 align-self-center">
                                     <h3 class="text-center"><i class="fas fa-microphone"></i></h3>

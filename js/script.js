@@ -96,13 +96,13 @@ const root = new Vue ({
           ],
           currentIndex: 0,
           currentChat: '',
-          boxImage: ''
+          userMessage: ''
         
        
     },
     methods: {
       showChat(index){
-        this.currentChat = this.contacts[index];
+        this.currentIndex = index;
         
       },
       getContactImage(index) {
