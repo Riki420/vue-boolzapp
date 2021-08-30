@@ -108,7 +108,6 @@ const root = new Vue ({
         this.currentIndex = index;
         
       },
-
       getContactImage(index) {
         const contact = this.contacts[index];
         const imageContact = `./img/avatar${contact.avatar}.jpg`;
