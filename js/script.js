@@ -91,13 +91,14 @@ const root = new Vue ({
                   message: 'Si, ma preferirei andare al cinema',
                   status: 'received',
                 },
+                
               ],
             },
+            
           ],
           currentIndex: 0,
           currentChat: '',
           userMessage: '',
-          filteredContact: '',
           searchTerm: ''
         
        
@@ -115,11 +116,12 @@ const root = new Vue ({
       },
 
       sendMessage(){
+        const dateChat = dayjs().format('DD/MM/YYYY HH:mm:ss');
         if(!this.userMessage.trim()) return;
         const userMessage = {
           status: 'sent',
           message: this.userMessage,
-          date: dayjs().format('DD/MM/YYYY HH:mm:ss')
+          date: dateChat
           
 
         }
@@ -130,7 +132,7 @@ const root = new Vue ({
           const answerMessage = {
             status: 'received',
             message: 'ok',
-            date: dayjs().format('DD/MM/YYYY HH:mm:ss')
+            date: dateChat
 
           }
           this.contacts[this.currentIndex].messages.push(answerMessage);
@@ -139,9 +141,13 @@ const root = new Vue ({
       },
 
       searchUser(){
-        if(!this.searchTerm.trim()) return true;
-        const filteredUser = this.searchTerm.trim().toLowerCase();
-        return this.contacts.includes(filteredUser);
-    }        
+       this.contacts.forEach((contact, i) => {
+          if (contact.name.toLowerCase().includes(this.searchTerm.toLowerCase())) {
+            contact.visible = true;
+          } else {
+            contact.visible = false;
+          }
+        });
   }
+}
 });

@@ -43,7 +43,7 @@
                             </div>
 
                             <!--NOTIFICA WEB-->
-                            <div class="col-12 bg-eda my-s-height-2 py-2 d-flex align-self-start">
+                            <div class="col-12  d-lg-flex d-md-none d-sm-none d-xs-none bg-eda my-s-height-2 py-2 d-flex align-self-start">
                                 <div class="col-2 d-flex align-self-center py-2 me-2">
                                     <div class="bell-circle rounded-circle">
                                         <i class="far fa-bell-slash"></i>
@@ -61,7 +61,7 @@
 
                             <!--INPUT DI RICERCA-->
                             <div class="p-2 position-relative">
-                                <input type="search" name="searchUser" id="searchUser" class="w-100 py-2 px-4 rounded-pill" placeholder="Cerca o avvia una chat" v-model="searchTerm">
+                                <input type="search" name="searchUser" id="searchUser" class="w-100 py-2 px-4 rounded-pill d-lg-block d-md-block d-sm-none d-xs-none" placeholder="Cerca o avvia una chat" v-model.trim="searchTerm" @keyup="searchUser">
                             </div>
                             
 
@@ -71,7 +71,7 @@
                                         <li class="media usr-hvr border-bottom" 
                                         v-for="(contact, index) in contacts" 
                                         @click="showChat(index)"
-                                        v-if="searchUser()"
+                                        v-show="contact.visible == true"
                                         >
                                           <figure>
                                             <img :src="getContactImage(index)"
@@ -99,7 +99,7 @@
                                 </div>
                                 <div class="col-3 d-flex align-self-center flex-column py-2">
                                     <span class="media-text">{{ contacts[currentIndex].name }}</span>
-                                    <span class="media-text">Ultimo accesso oggi alle:</span>
+                                <span class="media-text">Ultimo accesso oggi alle:</span>
                                 </div>
                                 <div class="col-8 d-flex justify-content-end text-muted align-self-center">
                                     <h4 class="text-right text-muted">
