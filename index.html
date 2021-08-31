@@ -72,6 +72,7 @@
                                         v-for="(contact, index) in contacts" 
                                         @click="showChat(index)"
                                         v-show="contact.visible == true"
+                                        :class="(index == currentIndex) ? 'active' : '' "
                                         >
                                           <figure>
                                             <img :src="getContactImage(index)"
@@ -93,22 +94,26 @@
                         <div class="row">
 
                             <!--TITOLO CHAT UTENTE-->
-                            <div class="col-12 bg-ea my-s-height-1 py-2 d-flex align-self-center">
-                                <div class="col-1">
-                                    <img :src="`img/avatar${contacts[currentIndex].avatar}.jpg`" alt="avatar_1" class="img-fluid rounded-circle">
-                                </div>
-                                <div class="col-3 d-flex align-self-center flex-column py-2">
-                                    <span class="media-text">{{ contacts[currentIndex].name }}</span>
-                                <span class="media-text">Ultimo accesso oggi alle:</span>
-                                </div>
-                                <div class="col-8 d-flex justify-content-end text-muted align-self-center">
-                                    <h4 class="text-right text-muted">
-                                        <i class="fas fa-search mr-2 pointer"></i>
-                                        <i class="fas fa-paperclip mr-2 pointer"></i>
-                                        <i class="fas fa-ellipsis-v pointer"></i>
-                                    </h4>
+                            <div class="col-12 bg-ea my-s-height-1 py-2 d-flex align-self-center justify-content-between">
+                                <ul class="p-0 m-0">
+                                    <li class="media">
+                                        <figure>
+                                            <img :src="`img/avatar${contacts[currentIndex].avatar}.jpg`" alt="avatar_1" class="img-fluid rounded-circle">
+                                        </figure>
+                                        <div class="h6 media-text">
+                                            <div>{{ contacts[currentIndex].name }}</div>
+                                            <div>Ultimo accesso oggi alle:</div>
+                                        </div>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="w-25 text-muted d-flex justify-content-around align-items-center">
+                                    <i class="fas fa-search pointer"></i>
+                                    <i class="fas fa-paperclip pointer"></i>
+                                    <i class="fas fa-ellipsis-v pointer"></i>
                                 </div>
                             </div>
+                        
 
                             <!--CHAT-->
                             <div class="col-12 bg-pic my-s-height-4 overflow-scroll">

@@ -177,7 +177,11 @@ body{
   
  .msg:hover .icon-dropdown {
     display: block;
-  } 
+  }
+  
+  .active {
+    background-color: #f0f0f0;
+  }
   
 
   
