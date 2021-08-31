@@ -39,6 +39,13 @@ body{
 .bg-dfba{
     background-color: #d5f9ba;
 }
+.bg-green:hover {
+  background-color: rgba(220, 248, 198, 0.9);
+  }
+  
+.bg-white:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
 
 /*TEXT STYLE*/
 .text-underline{
@@ -157,3 +164,20 @@ body{
     font-size: 11px;
     color: #aaa;
   }
+
+  /*DROPDOWN MENU*/
+  .icon-dropdown {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    display: none;
+    padding: 2px;
+    color: #919191;
+  }
+  
+ .msg:hover .icon-dropdown {
+    display: block;
+  } 
+  
+
+  

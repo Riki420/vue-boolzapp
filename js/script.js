@@ -99,22 +99,24 @@ const root = new Vue ({
           currentIndex: 0,
           currentChat: '',
           userMessage: '',
-          searchTerm: ''
+          searchTerm: '',
+          dropdownMenu: '',
         
        
     },
     methods: {
-      
+//Cambia chat
       showChat(index){
         this.currentIndex = index;
         
       },
+//Immagine del contatto
       getContactImage(index) {
         const contact = this.contacts[index];
         const imageContact = `./img/avatar${contact.avatar}.jpg`;
         return imageContact
       },
-
+//Invio del messaggio
       sendMessage(){
         const dateChat = dayjs().format('DD/MM/YYYY HH:mm:ss');
         if(!this.userMessage.trim()) return;
@@ -139,7 +141,7 @@ const root = new Vue ({
 
         }, 1000);
       },
-
+//Ricerca utenti
       searchUser(){
        this.contacts.forEach((contact, i) => {
           if (contact.name.toLowerCase().includes(this.searchTerm.toLowerCase())) {

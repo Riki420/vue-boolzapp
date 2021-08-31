@@ -114,13 +114,18 @@
                             <div class="col-12 bg-pic my-s-height-4 overflow-scroll">
                                 <ul>
                                     <li 
-                                    class="message-container p-3" 
+                                    class="message-container p-3 msg" 
                                     v-for="message in contacts[currentIndex].messages"
                                     :class="message.status">
-                                      <div class="message p-2 rounded-3">
-                                        <p>{{ message.message }}</p>
-                                        <time datetime="2021-08-03T09:53">{{ message.date }}</time>
-                                      </div>
+                                        <div class="message p-2 rounded-3 position-relative">
+                                            <p>{{ message.message }}</p>
+                                            <time datetime="2021-08-03T09:53">{{ message.date }}</time>
+
+                                            <!--Menu a Tendina-->
+                                            <div class="icon-dropdown" :class="(message.status == 'sent') ? 'bg-green' : 'bg-white'">
+                                                <i class="fas fa-chevron-down pointer"></i>
+                                            </div>
+                                        </div>  
                                     </li>
                                   </ul>
                             </div>
